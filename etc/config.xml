@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<modules>
+		<Lindybop_Parcelshop>
+			<version>0.0.1</version>
+		</Lindybop_Parcelshop>
+	</modules>
+	<global>
+		<models>
+			<parcelshop>
+				<class>Lindybop_Parcelshop_Model</class>
+			</parcelshop>
+	        <checkout>
+	        	<rewrite>
+	        		<type_onepage>Lindybop_Parcelshop_Model_Type_Onepage</type_onepage>
+	        	</rewrite>
+	        </checkout>
+    	</models>
+    	<helpers>
+            <parcelshop>
+                <class>Lindybop_Parcelshop_Helper</class>
+            </parcelshop>
+        </helpers>
+	</global>
+	<default>
+		<carriers>
+			<parcelshop>
+				<active>1</active>
+				<model>parcelshop/carrier_parcelshop</model>
+				<title>Hermes Shipping</title>
+				<parcelshop_enabled>1</parcelshop_enabled>
+				<parcelshop_title>Parcelshop Delivery</parcelshop_title>
+				<parcelshop_price>3.99</parcelshop_price>
+			</parcelshop>
+		</carriers>
+	</default>
+	<admin>
+        <routers>
+            <adminhtml>
+                <args>
+				   <modules>
+					 <parcelshop after="Mage_Adminhtml">Lindybop_Parcelshop_Adminhtml</parcelshop>
+				   </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>	
+    <adminhtml>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <parcelshop>
+                                        <title>Parcelshop</title>
+                                    </parcelshop>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</adminhtml>
+</config>

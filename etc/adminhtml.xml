@@ -1,0 +1,22 @@
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <parcelshop translate="title" module="lindybop_parcelshop">
+                                        <title>parcelshop</title>
+                                        <sort_order>999</sort_order>
+                                    </parcelshop>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
